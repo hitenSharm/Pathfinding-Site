@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding</title>
+    
+    <style>
+        
+        #everything{
+            max-width: 500px;
+            margin: auto;
+        }
+        .titleOfSite{
+            font-family: 'Russo One', sans-serif;   
+            letter-spacing: 2px;         
+        }
+  
+        #grid{
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            grid-template-rows: repeat(10, 40px);
+            grid-row-gap: 13px;
+            grid-column-gap: 13px;
+        }
+        .node{
+            transition: all 1s ease ;
+            background-color :#00ffcc;
+            border-radius:6px;
+            margin:1px;
+            border:1px solid #aaa;
+        }
+        .node:hover{
+            cursor:pointer;
+            background-color:black; 
+        }
+        .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        margin: 2px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+        
+
+    </style>
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <br>
+    <div id="everything">
+        <div id="containe">
+            <h1 class="titleOfSite">Pathfinder Algorithm</h1>
+        </div>
+        <button onclick="BFS()" class="button">
+            BFS Approach!
+        </button>
+        <button onclick="DFS()" class="button">
+            DFS Approach!
+        </button>
+        <br><br>       
+        <div id="grid"></div>
+        <br> 
+        <button onclick="window.location.reload()" class="button">Refresh</button>
+    </div>
+    
+  
+    <script src="index.js"></script>
+</body>
+</html>
