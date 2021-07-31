@@ -154,12 +154,29 @@ function createBoard(){
   
 }
 
+function changeStyles(pathNodes,flag)
+{
+  var x=0;
+  var colour="#33cc33";
+  if(flag==1)
+  {
+    colour="#ffff66";
+  }
+  for(let i=pathNodes.length-1; i>=0; i--)
+  {
+    setTimeout(()=>{
+      const stylingNode=pathNodes[i];      
+      stylingNode.style.backgroundColor=colour;
+    },50*x);
+    x++;
+  }
+  return ;
+}
+
 function sendPath(map,num){
-    
+    var pathNodes=[];
     var index=99;
-    while(index!=0){
-       
-        
+    while(index!=0){       
         var temp=map.get(index);
         var thisIndex=index+1;
         var rowofNode = Math.ceil(thisIndex / 10 );
@@ -171,16 +188,11 @@ function sendPath(map,num){
         
         if(index!=99)
         {
-            if(num==1)
-            currNodeIs.style.backgroundColor="#ffff66";
-            else
-            currNodeIs.style.backgroundColor="#33cc33";
+          pathNodes.push(currNodeIs);
         }
-
         index=temp;
-       
-
     }
+changeStyles(pathNodes,num);
 console.log("Path!");
 }
 
